@@ -3,16 +3,15 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer',  platforms: :ruby
+
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -48,8 +47,6 @@ gem 'cancan'
 
 gem 'paperclip'
 
-gem 'dotenv-rails', group: :development
-
 gem 'aws-sdk', '< 2.0'
 
 gem 'friendly_id'
@@ -57,3 +54,14 @@ gem 'friendly_id'
 gem 'stripe'
 
 gem 'aasm'
+
+group :development do
+	gem 'spring'
+	gem 'sqlite3'
+	gem 'dotenv-rails'
+end
+
+group :production do
+	gem 'rails_12factor'
+	gem 'pg'
+end
